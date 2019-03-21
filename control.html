@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <body>
+    <div style="float:left">
+      <script>
+        window.addEventListener("gamepadconnected", (event) => {
+          console.log("A gamepad connected:");
+          console.log(event.gamepad);
+        });
+        function sendSer(value){
+          document.getElementById("ser").src="http://192.168.1.1/cgi-bin/web2ser?"+value;
+        }
+
+      </script>
+      <!-- <table>
+        <tr>
+          <td/><img id="ser" width="1" height="1">
+          <td>
+          <input type="button" onmousedown="sendSer('1')" onmouseup="sendSer('0')" value="前进" /></td>
+          <td/>
+        </tr>
+        <tr>
+          <td>
+            <input type="button" onmousedown="sendSer('2')" onmouseup="sendSer('0')" value="左转" />
+          </td>
+          <td/>
+          <td>
+            <input type="button" onmousedown="sendSer('4')" onmouseup="sendSer('0')" value="右转" />
+          </td>
+        </tr>
+        <tr>
+          <td/>
+          <td>
+            <input type="button" onmousedown="sendSer('3')" onmouseup="sendSer('0')" value="后退" />
+          </td>
+          <td/>
+        </tr>
+        <tr>
+          <td colspan="3" align="middle">
+            <input type="button" onclick="sendSer('5')" value="舵机向上" />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" align="middle">
+            <input type="button" onclick="sendSer('6')" value="舵机向下" />
+          </td>
+        </tr>
+      </table> -->
+    </div>
+    <div style="float:left">
+      <iframe width="640" height="480" src="http://192.168.3.33:8080/?action=stream"/>
+    </div>
+  </body>
+</html>
